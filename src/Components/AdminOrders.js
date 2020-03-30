@@ -45,7 +45,7 @@ export default class AdminOrders extends Component {
       const items = this.state.orders;
       const { customerInfo, cart } = this.state.item;
 
-      const listOfProducts = items.map((item,index) => {
+      const listOfProducts = items.map((item, index) => {
         let sum = 0;
 
         item.cart.forEach(i => {
@@ -58,7 +58,8 @@ export default class AdminOrders extends Component {
               onClick={() => {
                 this.handleListClick(item);
               }}
-            ><th>{index}</th>
+            >
+              <th>{index}</th>
               <th>{item.customerInfo.name}</th>
               <th>{item.customerInfo.surname}</th>
               <th>{item.customerInfo.city}</th>
@@ -173,6 +174,12 @@ export default class AdminOrders extends Component {
                 </div>{" "}
                 <div className="adminOrder__singleTableRow">
                   {suma.toFixed(2)} PLN
+                </div>
+              </div>
+              <div className="adminOrder__singleTableColumn">
+                <div className="adminOrder__singleTableRow">Uwagi:</div>
+                <div className="adminOrder__singleTableRow">
+                  {customerInfo.uwagi}
                 </div>
               </div>
             </div>

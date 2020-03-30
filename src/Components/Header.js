@@ -43,6 +43,7 @@ export default function Header() {
         </header>
 
         <div className="container">
+          
           <div className="category__text-background">
             <span className="category__text">ZNAJDŹ COŚ DLA SIEBIE</span>
           </div>

@@ -29,6 +29,10 @@ i {
   margin-right: 15px;
 }
 
+
+.title li {
+  margin-top: 12px;
+}
 .title:nth-child(1) {
   padding-bottom: 1px;
   border-bottom: 1px solid rgb(77, 77, 77);
@@ -112,7 +116,7 @@ i {
     align-self: flex-start;
   }
   footer .divider {
-    margin: 3vh 1vw 0 ;
+    margin: 3vh 1vw 0;
   }
   .imgContainer {
     background-position-y: top;
@@ -131,4 +135,18 @@ i {
     justify-content: center;
     align-items: center;
   }
+}
+
+.title li:nth-child(3) {
+  margin-top: 2em;
+}
+.title li::after{
+  content: "";
+  display: block;
+  width: 20px;
+  background-color: rgb(107, 107, 107);
+  height: 1px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  margin-left: 2px;
 }
