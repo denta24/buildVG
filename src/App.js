@@ -26,6 +26,7 @@ class App extends Component {
 
   addItemToCart = item => {
     console.log(item);
+    delete item.measureSrc;
     Cookies.set("shoppingCartVellutoGiorno", [...this.state.cart, item], {
       expires: 1
     });
@@ -186,7 +187,7 @@ class App extends Component {
               <Route exact path="/kontakt" component={Contact} />
               <Route exact path="/regulamin" component={Terms} />
               <Route exact path="/dostawa" component={Delivery} />
-              
+
               <Route
                 path="/koszyk"
                 render={props => (
