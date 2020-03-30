@@ -73,7 +73,7 @@ export default function Footer() {
 function Delivery() {
   return (
     <>
-      <div style={{ padding: "8vh 10vh", width: "65vw" }} className="container">
+      <div  className="container container--terms">
         <div id="content" class="content-lift site-content">
           <div class="row">
             <div id="primary" class="col-sm-12">
@@ -173,7 +173,7 @@ function Delivery() {
 function Contact() {
   return (
     <>
-      <div style={{ padding: "8vh 10vh", width: "65vw" }} className="container">
+      <div  className="container container--terms">
         <div id="content" class="content-lift site-content">
           <div class="row">
             <div id="primary" class="col-sm-12">
@@ -189,15 +189,15 @@ function Contact() {
                     <hr />
                     <div class="entry-content">
                       <div>
-                        <a href="mailto:info@ochronne-maski.pl">
-                          <i className="fas fa-envelope footer_contact"></i>
-                          info@ochronne-maski.pl
+                        <a href="tel:600441543">
+                          <i className="fas fa-mobile-alt footer_contact"></i>
+                          600 441 543
                         </a>
                       </div>
                       <div>
-                        <a href="tel:600441542">
-                          <i className="fas fa-mobile-alt footer_contact"></i>
-                          600 441 542
+                        <a href="mailto:kacztex@wp.pl">
+                          <i className="fas fa-envelope footer_contact"></i>
+                          kacztex@wp.pl
                         </a>
                       </div>
                       <hr />
@@ -224,7 +224,7 @@ function Contact() {
 function Terms() {
   return (
     <>
-      <div style={{ padding: "8vh 10vh", width: "65vw" }} className="container">
+      <div  className="container container--terms">
         <div id="content" class="content-lift site-content">
           <div class="row">
             <div id="primary" class="col-sm-12">
@@ -241,7 +241,7 @@ function Terms() {
                     <div class="entry-content">
                       <p>
                         <span style={{ fontWeight: "400" }}>
-                          Polityka prywatności serwisu ochronne-maski.pl
+                          Polityka prywatności serwisu vellutogiorno.pl
                         </span>
                         <hr />
                       </p>
@@ -255,7 +255,7 @@ function Terms() {
                           Niniejsza Polityka Prywatności określa zasady
                           przetwarzania i ochrony danych osobowych przekazanych
                           przez Użytkowników w związku z korzystaniem przez nich
-                          z usług sklepu internetowego ochronne-maski.pl
+                          z usług sklepu internetowego vellutogiorno.pl
                         </span>
                       </p>
                       {/* ////punkty */}

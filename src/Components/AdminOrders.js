@@ -9,16 +9,21 @@ export default class AdminOrders extends Component {
     console.log("działa");
     this.setState({ item });
     const info = document.querySelector(".adminOrder");
-    const infoPosition =
-      document.body.scrollTop +
-      info.getBoundingClientRect().top -
-      document.body.offsetHeight * 0.1;
-    console.log(infoPosition);
+    // const infoPosition =
+    //   document.body.scrollTop +
+    //   info.getBoundingClientRect().top -
+    //   document.body.offsetHeight * 0.1;
 
-    document.body.scrollTo({
-      top: infoPosition,
-      behavior: "smooth"
-    });
+    const infoPosition =
+      info.getBoundingClientRect().top - window.innerHeight * 0.1;
+
+    console.log(infoPosition);
+    window.scrollBy(0, infoPosition);
+
+    // document.body.scrollTo({
+    //   top: infoPosition,
+    //   behavior: "smooth"
+    // });
   };
 
   loadItem = () => {
@@ -27,7 +32,7 @@ export default class AdminOrders extends Component {
       .then(res => {
         const { orders } = res.orders;
         const item = orders[orders.length - 1];
-        console.log(orders);
+        console.log(res);
         this.setState({
           orders,
           isLoaded: true,

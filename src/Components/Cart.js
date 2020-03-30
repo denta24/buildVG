@@ -90,15 +90,15 @@ export default class Cart extends Component {
     }
     const form = document.querySelector(".orderForm");
     const formPosition =
-      document.body.scrollTop +
-      form.getBoundingClientRect().top -
-      window.innerHeight * 0.1;
-    console.log(formPosition);
+      form.getBoundingClientRect().top - window.innerHeight * 0.25;
 
-    document.body.scrollTo({
-      top: formPosition,
-      behavior: "smooth"
-    });
+    console.log(formPosition);
+    window.scrollBy(0, formPosition);
+
+    // document.body.scroll({
+    //   top: formPosition,
+    //   behavior: "smooth"
+    // });
   };
   sendToBackEnd = () => {
     const { cart, customerInfo } = this.state;
@@ -214,6 +214,7 @@ export default class Cart extends Component {
             <p>
               Po powierdzeniu zamówienia, skontaktujemy się z Toba drogą mailową
               <span style={{ fontWeight: "400" }}>
+                <br/>
                 W razie pytań prosimy o kontakt. Więcej informacji znajdziesz w
                 zakładce <a href="/kontakt">kontakt</a>
               </span>

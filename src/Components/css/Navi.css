@@ -272,7 +272,7 @@ a:hover {
     transform: translateX(-5vw);
   }
   .titleElements {
-    margin: 2vh 0;
+    margin: 1.5vh 0;
   }
 
   .a_navi {
@@ -297,7 +297,7 @@ a:hover {
 }
 @media (max-width: 375px) {
   .titleElements {
-    margin: 2vh 0;
+    margin: 1.5vh 0;
   }
 
   .a_navi {

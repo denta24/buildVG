@@ -37,13 +37,14 @@ export default function Header() {
           <div className="txtContainer">
             <span className="txt">Witamy u nas</span>
             <p></p>
-            <button className="header__button">SPRAWDŹ</button>
+            <a href="/kobiety">
+              <button className="header__button">SPRAWDŹ</button>
+            </a>
           </div>
           <div className="transp"></div>
         </header>
 
         <div className="container">
-          
           <div className="category__text-background">
             <span className="category__text">ZNAJDŹ COŚ DLA SIEBIE</span>
           </div>
