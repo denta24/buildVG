@@ -8,15 +8,13 @@ export default class Item extends Component {
   state = {
     item: { id: "", name: "", prize: 0, imgSrc: [], measureSrc: [] },
     items: [{ id: "", name: "", prize: 0, imgSrc: [""] }],
-    selectedSize: ["null"]
+    selectedSize: ["null"],
   };
 
-  measures = [
-    "eee"
-  ];
+  measures = ["eee"];
 
   isLoaded = false;
-  handleScrollClick = side => {
+  handleScrollClick = (side) => {
     const slider = document.querySelector(".product__mini .product__mini");
     const x = slider.scrollLeft;
 
@@ -27,14 +25,14 @@ export default class Item extends Component {
     slider.scroll({
       top: 0,
       left: scrollInX,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
   componentWillMount() {
     window.scrollTo(0, 0);
   }
 
-  handleMiniImgClick = e => {
+  handleMiniImgClick = (e) => {
     document.querySelector(".product__image").src = e.target.src;
   };
 
@@ -42,8 +40,8 @@ export default class Item extends Component {
     console.log("eeeeeeeeee");
     const href = `/api${window.location.pathname}`;
     fetch(href)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         this.isLoaded = true;
         if (
           typeof data.measureSrc === "undefined" ||
@@ -76,7 +74,7 @@ export default class Item extends Component {
       if (selectedSize.length) {
         const choosedItem = {
           ...this.state.item,
-          size: [this.state.selectedSize]
+          size: [this.state.selectedSize],
         };
         this.props.addItemToCart(choosedItem);
 
@@ -86,9 +84,11 @@ export default class Item extends Component {
     } else {
       const choosedItem = {
         ...this.state.item,
-        size: ["brak"]
+        size: ["brak"],
       };
       this.props.addItemToCart(choosedItem);
+      const popup = document.querySelector(".popup");
+      popup.style.display = "block";
     }
   };
 
@@ -102,7 +102,7 @@ export default class Item extends Component {
     let diff;
     let transformX = 0;
     let target = null;
-    const down = e => {
+    const down = (e) => {
       isClicked = true;
       startPosition = e.clientX;
       lastCategory = document.querySelector(".product__mini-image:last-child");
@@ -116,7 +116,7 @@ export default class Item extends Component {
       e.preventDefault();
     };
 
-    const move = e => {
+    const move = (e) => {
       if (isClicked && lastCategory.getBoundingClientRect) {
         const x = lastCategory.getBoundingClientRect().x.toFixed(2);
         diff = e.clientX - startPosition;
@@ -134,7 +134,7 @@ export default class Item extends Component {
       }
     };
 
-    const up = e => {
+    const up = (e) => {
       isClicked = false;
       if (target) target.style.pointerEvents = "auto";
       e.preventDefault();
@@ -153,7 +153,7 @@ export default class Item extends Component {
       // console.log(this.props, "propsyyy");
 
       // console.log(item);
-      const mini_items = item.imgSrc.map(item => (
+      const mini_items = item.imgSrc.map((item) => (
         <>
           <div className="product__mini-image">
             <LightgalleryItem src={item}>
@@ -168,11 +168,11 @@ export default class Item extends Component {
         </>
       ));
 
-      const allSizes = item.size.map(size => (
+      const allSizes = item.size.map((size) => (
         <button
           id={`${size}`}
           className="product__button"
-          onClick={e => this.setState({ selectedSize: [size] })}
+          onClick={(e) => this.setState({ selectedSize: [size] })}
         >
           {size}
         </button>
@@ -181,7 +181,7 @@ export default class Item extends Component {
       const popup = [
         <div className="popup">
           <div
-            onClick={e => {
+            onClick={(e) => {
               document.querySelector(".popup").style.display = "none";
             }}
             className="popup__background"
@@ -200,7 +200,7 @@ export default class Item extends Component {
                     style={{
                       color: "black",
                       marginBottom: "2vh",
-                      border: "none"
+                      border: "none",
                     }}
                     className="singleCartItem__infoSingle"
                   >
@@ -236,7 +236,7 @@ export default class Item extends Component {
               </a>
             </div>
           </div>
-        </div>
+        </div>,
       ];
 
       return (
@@ -314,7 +314,7 @@ export default class Item extends Component {
 
                   <div className="product__description">
                     <div
-                      onClick={e => {
+                      onClick={(e) => {
                         e.target.nextSibling.classList.toggle(
                           "product__expanding--open"
                         );
@@ -331,7 +331,7 @@ export default class Item extends Component {
 
                   <div className="product__description">
                     <div
-                      onClick={e => {
+                      onClick={(e) => {
                         e.target.nextSibling.classList.toggle(
                           "product__expanding--open"
                         );
