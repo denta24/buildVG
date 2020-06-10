@@ -323,10 +323,12 @@ export default class Item extends Component {
                     >
                       Informacje o produkcie
                     </div>
-                    <div className="product__expanding ">
-                      {item.description}
-                      <br></br>
-                    </div>
+                    <div
+                      className="product__expanding "
+                      dangerouslySetInnerHTML={{
+                        __html: `${item.description}`,
+                      }}
+                    ></div>
                   </div>
 
                   <div className="product__description">
